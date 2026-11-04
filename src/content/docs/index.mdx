@@ -1,0 +1,68 @@
+---
+title: Action Stations documentation
+description: Guides and reference for Action Stations, the desktop app that builds tabletop exercises from your own plans, runs them live and turns the debrief into an after-action report.
+template: splash
+hero:
+  tagline: Build tabletop exercises from your own plans, run them live with players on their phones, and turn the hot wash into an after-action report. Everything runs on your computer.
+  actions:
+    - text: Get started
+      link: /guides/start/getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: Download the app
+      link: https://actionstations.ai/download/
+      icon: external
+      variant: minimal
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components'
+
+## Where to start
+
+<CardGrid>
+  <LinkCard
+    title="Getting started"
+    description="Install, import an organization's plans, connect a model and generate your first exercise."
+    href="/guides/start/getting-started/"
+  />
+  <LinkCard
+    title="How a good tabletop is built"
+    description="Objectives, phases, inject purposes, decision points and the hot wash: the design the app follows."
+    href="/guides/start/methodology/"
+  />
+  <LinkCard
+    title="Run it live"
+    description="Players join on their phones; the SimCell answers; you run the room from one screen."
+    href="/live/player-page/"
+  />
+  <LinkCard
+    title="Models and providers"
+    description="Set up LM Studio, Ollama, Anthropic, ComfyUI and local text-to-speech, and choose a model."
+    href="/providers/"
+  />
+</CardGrid>
+
+## Go further
+
+<CardGrid>
+  <LinkCard
+    title="After the exercise"
+    description="Record the hot wash, track corrective actions and propose plan changes."
+    href="/guides/after/hot-wash/"
+  />
+  <LinkCard
+    title="Customize"
+    description="Change the prompts and write your own inject templates."
+    href="/guides/customize/prompts/"
+  />
+  <LinkCard
+    title="Reference"
+    description="Inject types, pack and bundle formats, and the accessibility conformance report."
+    href="/reference/inject-taxonomy/"
+  />
+  <LinkCard
+    title="Developers"
+    description="Architecture, data model, conventions, architecture decisions and feature specs."
+    href="/developers/overview/architecture/"
+  />
+</CardGrid>

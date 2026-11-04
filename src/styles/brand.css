@@ -1,0 +1,73 @@
+/* actionstations.ai colors on Starlight's theme variables. Dark is navy with yellow links and
+   highlights; light is cream with a dark red that keeps links above 4.5:1. Raw colors live only
+   here. Bangers is used once per page, for the page title (the site's design system). */
+:root {
+  --sl-font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --sl-font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --as-display: 'Bangers', 'Impact', 'Arial Narrow', sans-serif;
+  --as-yellow: #ffd21f;
+  --as-ink: #14100c;
+
+  /* Dark theme (Starlight's default) */
+  --sl-color-accent-low: #3d3204;
+  --sl-color-accent: #ffd21f;
+  --sl-color-accent-high: #ffe57a;
+  --sl-color-white: #fbf3dd;
+  --sl-color-gray-1: #eae3cf;
+  --sl-color-gray-2: #c3cdeb;
+  --sl-color-gray-3: #8e9bc4;
+  --sl-color-gray-4: #56638f;
+  --sl-color-gray-5: #2a3664;
+  --sl-color-gray-6: #16224a;
+  --sl-color-black: #0b1330;
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: #ffe9a8;
+  --sl-color-accent: #b3121b;
+  --sl-color-accent-high: #7d0c12;
+  --sl-color-white: #14100c;
+  --sl-color-gray-1: #2b241c;
+  --sl-color-gray-2: #463d32;
+  --sl-color-gray-3: #6b6152;
+  --sl-color-gray-4: #9b907d;
+  --sl-color-gray-5: #d9cfb8;
+  --sl-color-gray-6: #f3ead3;
+  --sl-color-gray-7: #faf4e4;
+  --sl-color-black: #fffbf0;
+}
+
+/* The page title: the one display moment of each page. */
+.content-panel h1#_top {
+  font-family: var(--as-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  font-size: clamp(2.25rem, 1.8rem + 2vw, 3.25rem);
+  line-height: 1.05;
+}
+
+/* A yellow rule under the header ties the docs to the main site's bands. */
+header.header {
+  border-bottom: 3px solid var(--as-yellow);
+}
+
+/* Primary buttons are yellow with ink text in both themes, like the site. */
+.sl-link-button.primary {
+  background: var(--as-yellow);
+  color: var(--as-ink);
+  border: 2px solid var(--as-ink);
+  box-shadow: 3px 3px 0 var(--as-ink);
+}
+.sl-link-button.primary:hover {
+  color: var(--as-ink);
+}
+
+/* Screenshots: the site's frame (2px ink border, 6px radius). */
+.sl-markdown-content img {
+  border: 2px solid var(--sl-color-gray-5);
+  border-radius: 6px;
+}
+
+/* The site title beside the logo reads as plain text, not a link color. */
+.site-title {
+  color: var(--sl-color-white);
+}
