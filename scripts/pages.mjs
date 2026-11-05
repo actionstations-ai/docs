@@ -44,7 +44,7 @@ export const PAGES = {
 
   // Customize
   'docs/guides/prompts.md': page('guides/customize/prompts', 1, { title: 'Prompts' }),
-  'docs/guides/templates.md': page('guides/customize/templates', 2, { title: 'Inject templates' }),
+  'docs/guides/templates.md': page('developers/overview/inject-templates', 4, { title: 'Writing inject templates' }),
 
   // Reference
   'docs/03-INJECT-TAXONOMY.md': page('reference/inject-taxonomy', 1),
@@ -57,7 +57,7 @@ export const PAGES = {
   'docs/02-ARCHITECTURE.md': page('developers/overview/architecture', 1),
   'docs/05-DATA-MODEL.md': page('developers/overview/data-model', 2),
   'docs/09-CODE-CONVENTIONS.md': page('developers/overview/code-conventions', 3),
-  'CONTRIBUTING.md': page('developers/overview/contributing', 4),
+  'CONTRIBUTING.md': page('developers/overview/contributing', 5),
 }
 
 /** A new guide that is not listed above (with a warning); anything else stays off the site. */
