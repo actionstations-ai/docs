@@ -63,11 +63,10 @@ test('the description is the first prose paragraph, plain and short', () => {
   assert.ok(describe('word '.repeat(80)).length <= 160)
 })
 
-test('ADRs and specs are placed by number; the ADR template is left out; mapped pages have unique slugs', () => {
-  assert.deepEqual(classifyUnknown('docs/adr/0073-player-apps.md'), { slug: 'developers/adr/0073-player-apps', order: 73 })
-  assert.equal(classifyUnknown('docs/adr/0000-template.md'), undefined)
-  assert.equal(classifyUnknown('docs/specs/0446-mobile-player-apps.md').search, false)
-  assert.equal(classifyUnknown('docs/research/x.md'), undefined)
+test('internal records stay off the site; a new guide is placed with a warning; slugs are unique', () => {
+  assert.equal(classifyUnknown('docs/adr/0073-player-apps.md'), undefined)
+  assert.equal(classifyUnknown('docs/specs/0446-mobile-player-apps.md'), undefined)
+  assert.deepEqual(classifyUnknown('docs/guides/new-thing.md'), { slug: 'guides/build/new-thing', order: 50, warn: true })
   const slugs = Object.values(PAGES).map((p) => p.slug)
   assert.equal(new Set(slugs).size, slugs.length)
 })

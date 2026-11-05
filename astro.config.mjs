@@ -34,14 +34,7 @@ export default defineConfig({
         group('Models and providers', 'providers'),
         group('Customize', 'guides/customize'),
         group('Reference', 'reference'),
-        {
-          label: 'Developers',
-          items: [
-            { autogenerate: { directory: 'developers/overview' } },
-            group('Architecture decisions', 'developers/adr', true),
-            group('Feature specs', 'developers/specs', true),
-          ],
-        },
+        group('Developers', 'developers/overview'),
       ],
     }),
   ],

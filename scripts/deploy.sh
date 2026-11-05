@@ -25,6 +25,8 @@ echo "==> Sync from the app repository"
 node scripts/sync-docs.mjs ${REF:+--ref "$REF"}
 echo "==> Build"
 pnpm exec astro build
+echo "==> User-facing pages (internal references are listed; STRICT=1 fails the deploy)"
+node scripts/check-user-facing.mjs ${STRICT:+--strict} | tail -1
 echo "==> Links"
 node scripts/check-links.mjs
 

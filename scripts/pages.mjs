@@ -1,7 +1,8 @@
 // Where each document of the app repository goes on the site. The sidebar groups follow the
 // directories in astro.config.mjs; `order` sorts within a group; `title` overrides the document's
-// own heading when that reads badly in a sidebar. Documents not listed here are placed by
-// classifyUnknown(), so a new guide or ADR appears without editing this file.
+// own heading when that reads badly in a sidebar. The site is for people who use and extend the
+// app: internal process records (ADRs, feature specs, roadmap, release checklists) stay in the
+// repository. A new guide that is not listed here is placed by classifyUnknown().
 
 const page = (slug, order, extra = {}) => ({ slug, order, ...extra })
 
@@ -51,33 +52,16 @@ export const PAGES = {
   'docs/packs-format.md': page('reference/pack-format', 3),
   'docs/exercise-bundle-format.md': page('reference/exercise-bundle-format', 4),
   'docs/accessibility/ACR-508.md': page('reference/accessibility-conformance', 5),
-  'docs/benchmarks/README.md': page('reference/model-benchmark-results', 6),
 
   // Developers
   'docs/02-ARCHITECTURE.md': page('developers/overview/architecture', 1),
   'docs/05-DATA-MODEL.md': page('developers/overview/data-model', 2),
   'docs/09-CODE-CONVENTIONS.md': page('developers/overview/code-conventions', 3),
   'CONTRIBUTING.md': page('developers/overview/contributing', 4),
-  'docs/06-GITHUB-WORKFLOW.md': page('developers/overview/github-workflow', 5),
-  'docs/RELEASING.md': page('developers/overview/releasing', 6),
-  'docs/mobile/STORES.md': page('developers/overview/player-app-releases', 7),
-  'docs/01-PRD.md': page('developers/overview/product-requirements', 8),
-  'docs/08-ROADMAP.md': page('developers/overview/roadmap', 9),
-  'docs/adr/README.md': page('developers/adr/index', 0, { label: 'About ADRs' }),
-  'docs/specs/README.md': page('developers/specs/index', 0, { label: 'About specs' }),
 }
 
-/** ADRs, specs and new guides that are not listed above. Undefined = leave the file out. */
+/** A new guide that is not listed above (with a warning); anything else stays off the site. */
 export function classifyUnknown(src) {
-  const numbered = /\/(\d{4})-([\w-]+)\.md$/.exec(src)
-  if (src.startsWith('docs/adr/') && numbered) {
-    if (numbered[1] === '0000') return undefined // the template
-    return { slug: `developers/adr/${numbered[1]}-${numbered[2].toLowerCase()}`, order: Number(numbered[1]) }
-  }
-  if (src.startsWith('docs/specs/') && numbered) {
-    // Specs are long working documents: browsable, but kept out of search so guides rank first.
-    return { slug: `developers/specs/${numbered[1]}-${numbered[2].toLowerCase()}`, order: Number(numbered[1]), search: false }
-  }
   const guide = /^docs\/guides\/([\w-]+)\.md$/.exec(src)
   if (guide) return { slug: `guides/build/${guide[1]}`, order: 50, warn: true }
   return undefined
