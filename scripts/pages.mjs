@@ -39,8 +39,13 @@ export const PAGES = {
   'docs/guides/providers/anthropic.md': page('providers/anthropic', 4),
   'docs/guides/providers/comfyui.md': page('providers/comfyui', 5),
   'docs/guides/providers/local-tts.md': page('providers/local-tts', 6),
-  'docs/guides/model-profiles.md': page('providers/model-profiles', 7),
-  'docs/guides/model-benchmark.md': page('providers/model-benchmark', 8),
+  'docs/guides/providers/openai.md': page('providers/openai', 7),
+  'docs/guides/providers/gemini.md': page('providers/gemini', 8),
+  'docs/guides/providers/hosted-services.md': page('providers/hosted-services', 9),
+  'docs/guides/providers/elevenlabs.md': page('providers/elevenlabs', 10),
+  'docs/guides/providers/cloud-video.md': page('providers/cloud-video', 11),
+  'docs/guides/model-profiles.md': page('providers/model-profiles', 12),
+  'docs/guides/model-benchmark.md': page('providers/model-benchmark', 13),
 
   // Customize
   'docs/guides/prompts.md': page('guides/customize/prompts', 1, { title: 'Prompts' }),
@@ -64,5 +69,7 @@ export const PAGES = {
 export function classifyUnknown(src) {
   const guide = /^docs\/guides\/([\w-]+)\.md$/.exec(src)
   if (guide) return { slug: `guides/build/${guide[1]}`, order: 50, warn: true }
+  const provider = /^docs\/guides\/providers\/([\w-]+)\.md$/.exec(src)
+  if (provider) return { slug: `providers/${provider[1]}`, order: 50, warn: true }
   return undefined
 }
