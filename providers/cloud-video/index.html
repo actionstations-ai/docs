@@ -1,0 +1,340 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-qo5ae45u"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Cloud images and video (fal.ai and Replicate) | Action Stations Docs</title><link rel="canonical" href="https://docs.actionstations.ai/providers/cloud-video/"/><link rel="sitemap" href="/sitemap-index.xml"/><link rel="apple-touch-icon" href="/apple-touch-icon.png"/><link rel="shortcut icon" href="/favicon-32.png" type="image/png"/><meta name="generator" content="Astro v7.3.8"/><meta name="generator" content="Starlight v0.42.6"/><meta property="og:title" content="Cloud images and video (fal.ai and Replicate)"/><meta property="og:type" content="article"/><meta property="og:url" content="https://docs.actionstations.ai/providers/cloud-video/"/><meta property="og:locale" content="en"/><meta property="og:description" content="Two services are supported: fal.ai and Replicate. Both serve the same two tasks and work the same way in the app; this guide covers fal.ai first, and…"/><meta property="og:site_name" content="Action Stations Docs"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="Two services are supported: fal.ai and Replicate. Both serve the same two tasks and work the same way in the app; this guide covers fal.ai first, and…"/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/_astro/common.BGKqNHq0.css"><style>@layer starlight.components{svg:where(.astro-vnwekxjx){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em;overflow:visible}}
+</style><script type="module" src="/_astro/page.cNngjUgL.js"></script></head><body class="astro-qo5ae45u"><a class="sl-skip-link astro-zwmawshx" href="#_top">Skip to content</a><div class="page sl-flex astro-2lz5n7h7"><header class="header astro-2lz5n7h7"><div class="header astro-juoe6wwo"><div class="title-wrapper sl-flex astro-juoe6wwo"><a href="/" class="site-title sl-flex astro-dem6id4i"><img class="astro-dem6id4i" alt="Action Stations" src="/_astro/action-stations-logo.Bd9mg2QL.png" width="1200" height="400"><span class="astro-dem6id4i" translate="no">Action Stations Docs</span></a></div><div class="sl-flex print:hidden astro-juoe6wwo"><site-search class="astro-juoe6wwo astro-ms3zerf7" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-ms3zerf7"><svg aria-hidden="true" class="astro-ms3zerf7 astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-ms3zerf7" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-ms3zerf7" style="display: none;"><kbd class="astro-ms3zerf7">Ctrl</kbd><kbd class="astro-ms3zerf7">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-ms3zerf7"><div class="dialog-frame sl-flex astro-ms3zerf7"><button data-close-modal class="sl-flex md:sl-hidden astro-ms3zerf7">Cancel</button><div class="search-container astro-ms3zerf7"><div id="starlight__search" class="astro-ms3zerf7"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.DVuyRw7Q.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-juoe6wwo"><div class="sl-flex social-icons astro-juoe6wwo"><a href="https://github.com/actionstations-ai/actionstations" rel="me" class="sl-flex astro-y7mukufa"><span class="sr-only astro-y7mukufa">Source on GitHub</span><svg aria-hidden="true" class="astro-y7mukufa astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-nxv6nwzk"><span class="sr-only astro-nxv6nwzk">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-nxv6nwzk astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-nxv6nwzk"><option value="dark" class="astro-nxv6nwzk">Dark</option><option value="light" class="astro-nxv6nwzk">Light</option><option value="auto" selected class="astro-nxv6nwzk">Auto</option></select><svg aria-hidden="true" class="icon caret astro-nxv6nwzk astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script><script type="module">var e=`starlight-theme`,t=e=>e===`auto`||e===`dark`||e===`light`?e:`auto`,n=()=>t(typeof localStorage<`u`&&localStorage.getItem(e));function r(t){typeof localStorage<`u`&&localStorage.setItem(e,t===`light`||t===`dark`?t:``)}var i=()=>matchMedia(`(prefers-color-scheme: light)`).matches?`light`:`dark`;function a(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e===`auto`?i():e,r(e)}matchMedia(`(prefers-color-scheme: light)`).addEventListener(`change`,()=>{n()===`auto`&&a(`auto`)});var o=class extends HTMLElement{constructor(){super(),a(n()),this.querySelector(`select`)?.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&a(t(e.currentTarget.value))})}};customElements.define(`starlight-theme-select`,o);</script><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div></header><nav class="sidebar print:hidden astro-2lz5n7h7" aria-label="Main"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-izg6nbmn"><svg aria-hidden="true" class="open-menu astro-izg6nbmn astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-izg6nbmn astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-izg6nbmn">Menu</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-2lz5n7h7"><div class="sidebar-content sl-flex astro-2lz5n7h7"><sl-sidebar-state-persist data-hash="0ykp13n" class="astro-fvmsl5ne"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-vszp3i2k"><li class="astro-vszp3i2k"><details open class="astro-vszp3i2k"><summary class="astro-vszp3i2k"><span class="group-label astro-vszp3i2k"><span class="large astro-vszp3i2k">Start here</span></span><svg aria-hidden="true" class="caret astro-vszp3i2k astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-vszp3i2k"><li class="astro-vszp3i2k"><a href="/guides/start/getting-started/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Getting started</span></a></li><li class="astro-vszp3i2k"><a href="/guides/start/methodology/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">How a good tabletop exercise is built</span></a></li></ul></details></li><li class="astro-vszp3i2k"><details open class="astro-vszp3i2k"><summary class="astro-vszp3i2k"><span class="group-label astro-vszp3i2k"><span class="large astro-vszp3i2k">Build an exercise</span></span><svg aria-hidden="true" class="caret astro-vszp3i2k astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-vszp3i2k"><li class="astro-vszp3i2k"><a href="/guides/build/grounding/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Source check and plan conflicts</span></a></li><li class="astro-vszp3i2k"><a href="/guides/build/maps/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Maps</span></a></li><li class="astro-vszp3i2k"><a href="/guides/build/hazard-data/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Hazard data</span></a></li><li class="astro-vszp3i2k"><a href="/guides/build/micro-drills/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Micro-drills</span></a></li><li class="astro-vszp3i2k"><a href="/guides/build/regional-exercises/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Regional exercises</span></a></li><li class="astro-vszp3i2k"><a href="/guides/build/translation-and-accessibility/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Translation and accessible player material</span></a></li><li class="astro-vszp3i2k"><a href="/guides/build/packs/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Packs</span></a></li><li class="astro-vszp3i2k"><a href="/guides/build/privacy/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">What goes to cloud models</span></a></li></ul></details></li><li class="astro-vszp3i2k"><details open class="astro-vszp3i2k"><summary class="astro-vszp3i2k"><span class="group-label astro-vszp3i2k"><span class="large astro-vszp3i2k">Run it live</span></span><svg aria-hidden="true" class="caret astro-vszp3i2k astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-vszp3i2k"><li class="astro-vszp3i2k"><a href="/live/player-page/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Live play: the player page</span></a></li><li class="astro-vszp3i2k"><a href="/live/simcell/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">The SimCell assistant</span></a></li><li class="astro-vszp3i2k"><a href="/live/self-hosted-server/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Self-hosted live play server</span></a></li></ul></details></li><li class="astro-vszp3i2k"><details open class="astro-vszp3i2k"><summary class="astro-vszp3i2k"><span class="group-label astro-vszp3i2k"><span class="large astro-vszp3i2k">After the exercise</span></span><svg aria-hidden="true" class="caret astro-vszp3i2k astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="3"></sl-sidebar-restore><ul class="astro-vszp3i2k"><li class="astro-vszp3i2k"><a href="/guides/after/hot-wash/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Facilitate: recording the hot wash</span></a></li><li class="astro-vszp3i2k"><a href="/guides/after/program/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">The exercise program</span></a></li><li class="astro-vszp3i2k"><a href="/guides/after/redlines/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Plan redlines and regression drills</span></a></li><li class="astro-vszp3i2k"><a href="/guides/after/eoc-platforms/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Exercise platforms and real-world alert formats</span></a></li></ul></details></li><li class="astro-vszp3i2k"><details open class="astro-vszp3i2k"><summary class="astro-vszp3i2k"><span class="group-label astro-vszp3i2k"><span class="large astro-vszp3i2k">Models and providers</span></span><svg aria-hidden="true" class="caret astro-vszp3i2k astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="4"></sl-sidebar-restore><ul class="astro-vszp3i2k"><li class="astro-vszp3i2k"><a href="/providers/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Overview</span></a></li><li class="astro-vszp3i2k"><a href="/providers/lm-studio/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">LM Studio</span></a></li><li class="astro-vszp3i2k"><a href="/providers/ollama/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Ollama</span></a></li><li class="astro-vszp3i2k"><a href="/providers/anthropic/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Anthropic (Claude)</span></a></li><li class="astro-vszp3i2k"><a href="/providers/comfyui/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">ComfyUI (images and video)</span></a></li><li class="astro-vszp3i2k"><a href="/providers/local-tts/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Local text-to-speech (mlx-audio)</span></a></li><li class="astro-vszp3i2k"><a href="/providers/openai/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">OpenAI</span></a></li><li class="astro-vszp3i2k"><a href="/providers/gemini/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Google Gemini</span></a></li><li class="astro-vszp3i2k"><a href="/providers/hosted-services/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Other hosted services</span></a></li><li class="astro-vszp3i2k"><a href="/providers/elevenlabs/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">ElevenLabs</span></a></li><li class="astro-vszp3i2k"><a href="/providers/cloud-video/" aria-current="page" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Cloud images and video (fal.ai and Replicate)</span></a></li><li class="astro-vszp3i2k"><a href="/providers/model-profiles/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Model profiles</span></a></li><li class="astro-vszp3i2k"><a href="/providers/model-benchmark/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Benchmarking local models</span></a></li></ul></details></li><li class="astro-vszp3i2k"><details open class="astro-vszp3i2k"><summary class="astro-vszp3i2k"><span class="group-label astro-vszp3i2k"><span class="large astro-vszp3i2k">Customize</span></span><svg aria-hidden="true" class="caret astro-vszp3i2k astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="5"></sl-sidebar-restore><ul class="astro-vszp3i2k"><li class="astro-vszp3i2k"><a href="/guides/customize/prompts/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Prompts</span></a></li></ul></details></li><li class="astro-vszp3i2k"><details open class="astro-vszp3i2k"><summary class="astro-vszp3i2k"><span class="group-label astro-vszp3i2k"><span class="large astro-vszp3i2k">Reference</span></span><svg aria-hidden="true" class="caret astro-vszp3i2k astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="6"></sl-sidebar-restore><ul class="astro-vszp3i2k"><li class="astro-vszp3i2k"><a href="/reference/inject-taxonomy/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">03 — Inject Taxonomy</span></a></li><li class="astro-vszp3i2k"><a href="/reference/tabletop-methodology/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">04 — How the CSAAP Tabletops Were Built</span></a></li><li class="astro-vszp3i2k"><a href="/reference/pack-format/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Pack and catalog formats</span></a></li><li class="astro-vszp3i2k"><a href="/reference/exercise-bundle-format/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Exercise bundle format (.asexercise)</span></a></li><li class="astro-vszp3i2k"><a href="/reference/accessibility-conformance/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Accessibility Conformance Report: Action Stations</span></a></li></ul></details></li><li class="astro-vszp3i2k"><details open class="astro-vszp3i2k"><summary class="astro-vszp3i2k"><span class="group-label astro-vszp3i2k"><span class="large astro-vszp3i2k">Developers</span></span><svg aria-hidden="true" class="caret astro-vszp3i2k astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="7"></sl-sidebar-restore><ul class="astro-vszp3i2k"><li class="astro-vszp3i2k"><a href="/developers/overview/architecture/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">02 — Architecture</span></a></li><li class="astro-vszp3i2k"><a href="/developers/overview/data-model/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">05 — Data Model</span></a></li><li class="astro-vszp3i2k"><a href="/developers/overview/code-conventions/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">09 — Code conventions and extension points</span></a></li><li class="astro-vszp3i2k"><a href="/developers/overview/inject-templates/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Writing inject templates</span></a></li><li class="astro-vszp3i2k"><a href="/developers/overview/contributing/" class="astro-vszp3i2k"><span class="astro-vszp3i2k">Contributing</span></a></li></ul></details></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-67kfenav"><div class="social-icons astro-67kfenav"><a href="https://github.com/actionstations-ai/actionstations" rel="me" class="sl-flex astro-y7mukufa"><span class="sr-only astro-y7mukufa">Source on GitHub</span><svg aria-hidden="true" class="astro-y7mukufa astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-nxv6nwzk"><span class="sr-only astro-nxv6nwzk">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-nxv6nwzk astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-nxv6nwzk"><option value="dark" class="astro-nxv6nwzk">Dark</option><option value="light" class="astro-nxv6nwzk">Light</option><option value="auto" selected class="astro-nxv6nwzk">Auto</option></select><svg aria-hidden="true" class="icon caret astro-nxv6nwzk astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-2lz5n7h7"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-mqyzlafb"><aside class="right-sidebar-container print:hidden astro-mqyzlafb"><div class="right-sidebar astro-mqyzlafb"><div class="lg:sl-hidden astro-fu4z2w3k"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-oje54ot6"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-oje54ot6"><details id="starlight__mobile-toc" class="astro-oje54ot6"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-oje54ot6"><span class="toggle sl-flex astro-oje54ot6">On this page<svg aria-hidden="true" class="caret astro-oje54ot6 astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-oje54ot6"></span></summary><div class="dropdown astro-oje54ot6"><ul class="isMobile astro-tpf4pozd" style="--depth: 0;"><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#_top" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">Overview</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#what-is-sent" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">What is sent</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#1-get-an-api-key" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">1. Get an API key</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#2-add-the-provider" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">2. Add the provider</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#3-pick-a-model" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">3. Pick a model</span></a><ul class="isMobile astro-tpf4pozd" style="--depth: 1;"><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#other-models" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">Other models</span></a></li></ul></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#cost" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">Cost</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#while-a-job-runs" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">While a job runs</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#troubleshooting" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">Troubleshooting</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#replicate" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">Replicate</span></a><ul class="isMobile astro-tpf4pozd" style="--depth: 1;"><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#what-is-sent-1" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">What is sent</span></a></li><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#set-up" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">Set up</span></a></li><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#models" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">Models</span></a></li><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#cost-progress-and-limits" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">Cost, progress and limits</span></a></li><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#troubleshooting-1" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">Troubleshooting</span></a></li></ul></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-fu4z2w3k"><div class="sl-container astro-fu4z2w3k"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-tpf4pozd" style="--depth: 0;"><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#_top" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">Overview</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#what-is-sent" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">What is sent</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#1-get-an-api-key" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">1. Get an API key</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#2-add-the-provider" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">2. Add the provider</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#3-pick-a-model" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">3. Pick a model</span></a><ul class="astro-tpf4pozd" style="--depth: 1;"><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#other-models" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">Other models</span></a></li></ul></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#cost" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">Cost</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#while-a-job-runs" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">While a job runs</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#troubleshooting" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">Troubleshooting</span></a></li><li style="--depth: 0;" class="astro-tpf4pozd"><a href="#replicate" style="--depth: 0;" class="astro-tpf4pozd"><span style="--depth: 0;" class="astro-tpf4pozd">Replicate</span></a><ul class="astro-tpf4pozd" style="--depth: 1;"><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#what-is-sent-1" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">What is sent</span></a></li><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#set-up" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">Set up</span></a></li><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#models" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">Models</span></a></li><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#cost-progress-and-limits" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">Cost, progress and limits</span></a></li><li style="--depth: 1;" class="astro-tpf4pozd"><a href="#troubleshooting-1" style="--depth: 1;" class="astro-tpf4pozd"><span style="--depth: 1;" class="astro-tpf4pozd">Troubleshooting</span></a></li></ul></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-mqyzlafb"><main data-pagefind-body class="astro-qo5ae45u" lang="en" dir="ltr"><div class="content-panel astro-wtsv6dx3"><div class="sl-container astro-wtsv6dx3"><h1 id="_top" class="astro-ummcq2hc">Cloud images and video (fal.ai and Replicate)</h1></div></div><div class="content-panel astro-wtsv6dx3"><div class="sl-container astro-wtsv6dx3"><div class="sl-markdown-content"><p>Two services are supported: fal.ai and Replicate. Both serve the same two tasks and work the same way in the app; this guide covers fal.ai first, and <a href="#replicate">Replicate</a> after it.</p>
+<p>fal.ai runs current image and video models in the cloud. Connect it when your computer cannot run a local video workflow, or when you want a newer model than your own hardware allows. It serves the <strong>Image</strong> and <strong>Video</strong> tasks. It does not make voices or text.</p>
+<p>fal.ai is a cloud provider. Everything below leaves your computer, so it follows the same rules as other cloud providers: it shows the cloud badge, and the app shows what will be sent and asks for approval before the first request (<a href="/guides/build/privacy/">What goes to cloud models</a>).</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="what-is-sent">What is sent</h2><a class="sl-anchor-link" href="#what-is-sent"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “What is sent”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Sent to fal.ai</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Image</td>
+<td>The scene description from the inject’s media brief, and the picture size you asked for.</td>
+</tr>
+<tr>
+<td>Video</td>
+<td>The video description, what to avoid, the clip length, and <strong>the scene image the app generated for that inject</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Names, phone numbers, emails and addresses in the description are replaced with placeholders before sending, as for text models. The scene image is a picture the app made itself from that description; the approval tells you that an image is attached. Nothing else is sent: not your documents, not the rest of the scenario.</p>
+<p>Text-bearing injects (tweets, tickets, emails, logs, display boards) never use this: they come from templates, so their text stays exact.</p>
+<p>fal.ai keeps a history of your requests (inputs and outputs) in your fal.ai dashboard for 90 days by default, and its result links expire after a while. The app downloads each result immediately and keeps its own copy in the project. See fal.ai’s documentation for how to change retention on your account.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="1-get-an-api-key">1. Get an API key</h2><a class="sl-anchor-link" href="#1-get-an-api-key"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “1. Get an API key”</span></a></div>
+<p>Create an account at fal.ai, add credit, and create an API key in the dashboard. Usage is billed to that account per generation.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="2-add-the-provider">2. Add the provider</h2><a class="sl-anchor-link" href="#2-add-the-provider"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “2. Add the provider”</span></a></div>
+<ol>
+<li><strong>Providers → Add provider → Type: fal.ai.</strong> The address is fixed.</li>
+<li>Paste the key into <strong>API key</strong>. It is stored encrypted by your operating system and is never shown again.</li>
+<li><strong>Add provider</strong>, then <strong>Test</strong> on the card. The test checks that the key works without generating anything, so it costs nothing.</li>
+<li>In <strong>Routing</strong>, assign the <strong>Image</strong> and <strong>Video</strong> tasks to fal.ai and type a model for each (see below).</li>
+</ol>
+<div class="sl-heading-wrapper level-h2"><h2 id="3-pick-a-model">3. Pick a model</h2><a class="sl-anchor-link" href="#3-pick-a-model"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “3. Pick a model”</span></a></div>
+<p>Type the model’s id in the Routing table. These are known to the app, so their settings are filled in for you:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Model id</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Video</td>
+<td><code dir="auto">fal-ai/kling-video/v2.5-turbo/pro/image-to-video</code></td>
+<td>Kling 2.5 Turbo Pro, 5 or 10 second clips</td>
+</tr>
+<tr>
+<td>Video</td>
+<td><code dir="auto">fal-ai/kling-video/v3/pro/image-to-video</code></td>
+<td>Kling 3 Pro, 3 to 15 seconds</td>
+</tr>
+<tr>
+<td>Video</td>
+<td><code dir="auto">fal-ai/ltx-2.5/image-to-video/fast</code></td>
+<td>LTX 2.5 Fast, 6 to 20 seconds, quick to run</td>
+</tr>
+<tr>
+<td>Video</td>
+<td><code dir="auto">fal-ai/minimax/hailuo-02/standard/image-to-video</code></td>
+<td>MiniMax Hailuo 02, 6 or 10 seconds</td>
+</tr>
+<tr>
+<td>Video</td>
+<td><code dir="auto">bytedance/seedance-2.5/us/image-to-video</code></td>
+<td>Seedance 2.5, 4 to 30 seconds</td>
+</tr>
+<tr>
+<td>Video</td>
+<td><code dir="auto">fal-ai/kling-video/v2.5-turbo/pro/text-to-video</code></td>
+<td>Kling 2.5, from the description alone</td>
+</tr>
+<tr>
+<td>Image</td>
+<td><code dir="auto">fal-ai/flux/schnell</code></td>
+<td>FLUX.1 schnell, fast and the cheapest</td>
+</tr>
+<tr>
+<td>Image</td>
+<td><code dir="auto">fal-ai/flux-pro/v1.1</code></td>
+<td>FLUX 1.1 pro, higher quality</td>
+</tr>
+<tr>
+<td>Image</td>
+<td><code dir="auto">fal-ai/flux-2</code></td>
+<td>FLUX.2</td>
+</tr>
+</tbody>
+</table>
+<p>Tips for choosing:</p>
+<ul>
+<li>Start with a fast, low-cost model to see the result for your scenario, then move up.</li>
+<li>Prefer an <strong>image-to-video</strong> model. The clip starts from the scene image the app already generated, so the video matches the still shown in the inject. A model that needs a starting image cannot run when no scene image exists.</li>
+<li>The scene image is sent inside the request, so a large one is shrunk first (to about 1 MB for fal.ai) by saving a smaller JPEG copy. The inject keeps its original image. If it cannot be made small enough, the job stops with “The starting image is too large for this service”.</li>
+<li>The clip length in the media brief is rounded to the nearest length the model accepts (a 7 second request becomes 5 seconds on Kling 2.5).</li>
+<li>Model ids and what they offer change on fal.ai. If a model is retired, pick another from fal.ai’s model gallery.</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="other-models">Other models</h3><a class="sl-anchor-link" href="#other-models"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Other models”</span></a></div>
+<p>Any fal.ai model id works. Each model names its inputs differently, so for a model the app does not know, open <strong>Video model inputs</strong> in the provider form, type the model’s id, and fill in the input names from the model’s API page on fal.ai: the prompt, the optional negative prompt, the starting image, the clip length (and the lengths it accepts), and the aspect ratio. Inputs you leave empty are not sent. Without any mapping, only the description is sent, which is enough for most text-to-video and text-to-image models.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="cost">Cost</h2><a class="sl-anchor-link" href="#cost"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Cost”</span></a></div>
+<p>fal.ai bills each generation to your account. Prices depend on the model and, for video, the clip length and quality, and they change, so check the price on the model’s page. Video is the expensive part: a scenario with many video injects can add up.</p>
+<p>To see an estimate before a batch starts, open <strong>Advanced</strong> in the provider form and enter a price per image and per video clip in US dollars. Before a batch of image or video generation, the app then shows how many calls it will make and the estimated total, and asks you to confirm. Without prices it still shows the number of calls.</p>
+<p>A cost-conscious setup: templates for text-bearing injects (free), a local or low-cost image model for scenes, and cloud video only for the few injects that need motion.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="while-a-job-runs">While a job runs</h2><a class="sl-anchor-link" href="#while-a-job-runs"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “While a job runs”</span></a></div>
+<p>Each job appears in the jobs tray with its place in fal.ai’s queue and progress. <strong>Cancel</strong> stops it, and the app also asks fal.ai to stop the job so you are not charged for work you cancelled where possible. A video that takes longer than 15 minutes (3 minutes for an image) is cancelled and reported as failed.</p>
+<p>The app only downloads a result from a secure (https) address given in fal.ai’s answer, up to 200 MB for a video and 30 MB for an image, and only if the file really is a video or an image.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="troubleshooting">Troubleshooting</h2><a class="sl-anchor-link" href="#troubleshooting"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Troubleshooting”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“fal.ai rejected the API key”</td>
+<td>The key is wrong or revoked. <strong>Edit → Replace</strong> the key.</td>
+</tr>
+<tr>
+<td>“account has no credit left”</td>
+<td>Add credit in your fal.ai dashboard and run the step again.</td>
+</tr>
+<tr>
+<td>“rate limiting requests or its queue is full”</td>
+<td>Wait a minute and retry, or run fewer clips at once.</td>
+</tr>
+<tr>
+<td>“does not have that model”</td>
+<td>The model id is misspelled or the model was retired. Copy the id from the model’s page on fal.ai.</td>
+</tr>
+<tr>
+<td>“did not accept the request or refused the content”</td>
+<td>The model rejected an input or its safety check refused the content. Reword the description, or check the input names under <strong>Video model inputs</strong>.</td>
+</tr>
+<tr>
+<td>“needs a starting image”</td>
+<td>You chose an image-to-video model but the inject has no scene image. Enable image generation for the inject, or pick a text-to-video model.</td>
+</tr>
+<tr>
+<td>Job stays “Waiting in line”</td>
+<td>fal.ai’s queue is busy. It is cancelled after 15 minutes; try a faster model.</td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h2"><h2 id="replicate">Replicate</h2><a class="sl-anchor-link" href="#replicate"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Replicate”</span></a></div>
+<p>Replicate runs many image and video models in the cloud, billed to your Replicate account. It serves the <strong>Image</strong> and <strong>Video</strong> tasks, works like fal.ai above (same approval step, same cloud badge, same jobs tray), and does not make voices or text.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="what-is-sent-1">What is sent</h3><a class="sl-anchor-link" href="#what-is-sent-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “What is sent”</span></a></div>
+<p>The same as for fal.ai: the scene description (with names, phone numbers, emails and addresses replaced by placeholders), the clip length and what to avoid for video, and, for an image-to-video model, the scene image the app generated for that inject. Nothing else is sent. Replicate removes the inputs and results of requests made through its API after an hour; the app downloads each result at once and keeps its own copy in the project.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="set-up">Set up</h3><a class="sl-anchor-link" href="#set-up"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Set up”</span></a></div>
+<ol>
+<li>Create an account at replicate.com, add a payment method or credit, and create an API token in your account settings.</li>
+<li><strong>Providers → Add provider → Type: Replicate.</strong> The address is fixed. Paste the token into <strong>API key</strong>.</li>
+<li><strong>Add provider</strong>, then <strong>Test</strong> on the card. The test only reads your account, so it costs nothing.</li>
+<li>In <strong>Routing</strong>, assign the <strong>Image</strong> and <strong>Video</strong> tasks to Replicate and type a model for each, written as <code dir="auto">owner/name</code>.</li>
+</ol>
+<div class="sl-heading-wrapper level-h3"><h3 id="models">Models</h3><a class="sl-anchor-link" href="#models"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Models”</span></a></div>
+<p>These are known to the app, so their settings are filled in for you:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Model</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Video</td>
+<td><code dir="auto">kwaivgi/kling-v2.5-turbo-pro</code></td>
+<td>Kling 2.5 Turbo Pro, 5 or 10 seconds, text or image</td>
+</tr>
+<tr>
+<td>Video</td>
+<td><code dir="auto">bytedance/seedance-1-pro-fast</code></td>
+<td>Seedance 1 Pro Fast, 2 to 12 seconds, text or image</td>
+</tr>
+<tr>
+<td>Video</td>
+<td><code dir="auto">minimax/hailuo-02</code></td>
+<td>Hailuo 02, 6 seconds, starts from the scene image</td>
+</tr>
+<tr>
+<td>Video</td>
+<td><code dir="auto">wan-video/wan-2.5-i2v-fast</code></td>
+<td>Wan 2.5 Fast, 5 or 10 seconds, needs the scene image</td>
+</tr>
+<tr>
+<td>Video</td>
+<td><code dir="auto">google/veo-3.1-fast</code></td>
+<td>Veo 3.1 Fast, 4, 6 or 8 seconds, text or image</td>
+</tr>
+<tr>
+<td>Video</td>
+<td><code dir="auto">lightricks/ltx-2-fast</code></td>
+<td>LTX 2 Fast, 6 to 20 seconds</td>
+</tr>
+<tr>
+<td>Image</td>
+<td><code dir="auto">black-forest-labs/flux-schnell</code></td>
+<td>FLUX.1 schnell, fast and the cheapest</td>
+</tr>
+<tr>
+<td>Image</td>
+<td><code dir="auto">black-forest-labs/flux-1.1-pro</code></td>
+<td>FLUX 1.1 pro, higher quality</td>
+</tr>
+<tr>
+<td>Image</td>
+<td><code dir="auto">google/imagen-4-fast</code></td>
+<td>Imagen 4 Fast</td>
+</tr>
+</tbody>
+</table>
+<p>The tips for fal.ai models apply here too: start with a fast model, prefer image-to-video so the clip matches the still in the inject, and expect the clip length to be rounded to a length the model accepts. Replicate’s model pages list what each model offers; models come and go, so pick another if one is retired.</p>
+<p>Any model from Replicate’s official collection works. For a model the app does not know, open <strong>Video model inputs</strong> in the provider form, type the model name and fill in the input names from the model’s API page, as described under <a href="#other-models">Other models</a>. Lengths are sent as whole numbers, which is what Replicate models expect.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="cost-progress-and-limits">Cost, progress and limits</h3><a class="sl-anchor-link" href="#cost-progress-and-limits"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Cost, progress and limits”</span></a></div>
+<p>Replicate bills each generation to your account, and prices differ by model, so check the model’s page. Enter per-call prices under <strong>Advanced</strong> to see an estimate before a batch, as for fal.ai.</p>
+<p>Short jobs finish within a single request. Longer ones show progress in the jobs tray until they finish. <strong>Cancel</strong> stops the job, and the app also asks Replicate to stop it. A video that takes longer than 15 minutes (3 minutes for an image) is cancelled and reported as failed. Downloads are limited to 200 MB for a video and 30 MB for an image, and only a real video or image is accepted.</p>
+<p>Replicate takes the scene image inside the request, and only a small one (about 250 KB). The app shrinks the image for you: it saves it again as a JPEG, lowering the quality and, if needed, the size (never above 1280 pixels on the long side). The picture you see in the inject is not changed. If the image still cannot be made small enough, the job stops with “The starting image is too large for this service” and nothing is sent.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="troubleshooting-1">Troubleshooting</h3><a class="sl-anchor-link" href="#troubleshooting-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Troubleshooting”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“Replicate rejected the API token”</td>
+<td>The token is wrong or revoked. <strong>Edit → Replace</strong> the key.</td>
+</tr>
+<tr>
+<td>“needs billing set up or more credit”</td>
+<td>Add a payment method or credit in your Replicate account and run the step again.</td>
+</tr>
+<tr>
+<td>“does not have that model”</td>
+<td>The name is misspelled or the model is not available. Copy it from the model’s page.</td>
+</tr>
+<tr>
+<td>“rate limiting requests”</td>
+<td>Wait for the time shown, or run fewer clips at once. A new account with little credit is limited more strictly.</td>
+</tr>
+<tr>
+<td>“refused the content”</td>
+<td>Replicate’s safety check flagged the description. Reword it.</td>
+</tr>
+<tr>
+<td>“did not accept the request”</td>
+<td>The model rejected an input. Check the input names under <strong>Video model inputs</strong>.</td>
+</tr>
+<tr>
+<td>“could not make the video”</td>
+<td>The model failed; the reason Replicate gave follows. Try again or pick another model.</td>
+</tr>
+<tr>
+<td>“needs a starting image”</td>
+<td>The model needs the scene image and the inject has none. Enable image generation for the inject, or pick a text-to-video model.</td>
+</tr>
+</tbody>
+</table>
+</div><footer class="sl-flex astro-tmsbrsxh"><div class="meta sl-flex astro-tmsbrsxh"><a href="https://github.com/actionstations-ai/actionstations/edit/main/docs/guides/providers/cloud-video.md" class="sl-flex print:hidden astro-5asema2y"><svg aria-hidden="true" class="astro-5asema2y astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.2em;"><path d="M22 7.24a1 1 0 0 0-.29-.71l-4.24-4.24a1 1 0 0 0-1.1-.22 1 1 0 0 0-.32.22l-2.83 2.83L2.29 16.05a1 1 0 0 0-.29.71V21a1 1 0 0 0 1 1h4.24a1 1 0 0 0 .76-.29l10.87-10.93L21.71 8c.1-.1.17-.2.22-.33a1 1 0 0 0 0-.24v-.14l.07-.05ZM6.83 20H4v-2.83l9.93-9.93 2.83 2.83L6.83 20ZM18.17 8.66l-2.83-2.83 1.42-1.41 2.82 2.82-1.41 1.42Z"/></svg>Edit page</a></div><div class="pagination-links print:hidden astro-ukqbcvit" dir="ltr"><a href="/providers/elevenlabs/" rel="prev" class="astro-ukqbcvit"><svg aria-hidden="true" class="astro-ukqbcvit astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-ukqbcvit">Previous<br class="astro-ukqbcvit"><span class="link-title astro-ukqbcvit">ElevenLabs</span></span></a><a href="/providers/model-profiles/" rel="next" class="astro-ukqbcvit"><svg aria-hidden="true" class="astro-ukqbcvit astro-vnwekxjx" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg><span class="astro-ukqbcvit">Next<br class="astro-ukqbcvit"><span class="link-title astro-ukqbcvit">Model profiles</span></span></a></div></footer></div></div></main></div></div></div></div></body></html>
