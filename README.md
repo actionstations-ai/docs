@@ -2,7 +2,7 @@
 
 The source of [docs.actionstations.ai](https://docs.actionstations.ai): a [Starlight](https://starlight.astro.build) site built from the documentation in the [app repository](https://github.com/actionstations-ai/actionstations).
 
-The guides, reference pages, ADRs and specs are written once, in the app repository's `docs/` folder and `CONTRIBUTING.md`. `scripts/sync-docs.mjs` copies them here at build time from the latest release tag, so the site documents what users can download. Only the home page (`src/content/docs/index.mdx`), the theme and the page map live in this repository. To change a guide, edit it in the app repository; the **Edit page** link on every page goes there.
+The guides, reference and developer pages are written once, in the app repository's `docs/` folder and `CONTRIBUTING.md`. `scripts/sync-docs.mjs` copies them here at build time from the latest release tag, so the site documents what users can download. Only the home page (`src/content/docs/index.mdx`), the theme and the page map live in this repository. To change a guide, edit it in the app repository; the **Edit page** link on every page goes there.
 
 ## Commands
 
@@ -14,6 +14,7 @@ pnpm dev                    # sync from the latest release tag, then serve on lo
 node scripts/sync-docs.mjs --ref main    # preview unreleased docs from main
 pnpm build                  # sync and build to dist/
 node scripts/check-links.mjs            # every internal link, image and anchor in dist/ resolves
+node scripts/check-user-facing.mjs      # no ADR, spec or issue numbers on any page (the deploy fails on one)
 pnpm test                   # the sync's Markdown transforms
 pnpm run deploy             # tests, sync, build, link check, then publish to gh-pages
 ```
@@ -22,7 +23,7 @@ pnpm run deploy             # tests, sync, build, link check, then publish to gh
 
 ## Where pages go
 
-`scripts/pages.mjs` maps each source document to a site path and a sidebar order; the sidebar groups are in `astro.config.mjs`. ADRs and specs are placed by number automatically, and a new guide that is not in the map appears under **Build an exercise** with a warning from the sync. Links between documents become site links; links to other repository files go to GitHub at the synced tag.
+`scripts/pages.mjs` maps each source document to a site path and a sidebar order; the sidebar groups are in `astro.config.mjs`. Field guides go under **Fields and toolkits**. Internal process records (decision records, specs, the roadmap) stay in the app repository and are never published. A new guide that is not in the map appears under **Build an exercise** with a warning from the sync. Links between documents become site links; links to other repository files go to GitHub at the synced tag.
 
 ## Hosting
 
