@@ -29,6 +29,7 @@ export default defineConfig({
       sidebar: [
         group('Start here', 'guides/start'),
         group('Build an exercise', 'guides/build'),
+        group('Fields and toolkits', 'guides/fields', true),
         group('Run it live', 'live'),
         group('After the exercise', 'guides/after'),
         group('Models and providers', 'providers'),
