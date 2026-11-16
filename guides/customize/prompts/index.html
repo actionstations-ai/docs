@@ -73,7 +73,7 @@
 	StarlightThemeProvider.updatePickers();
 </script></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-oavjl5jp"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-qh3jconl"><aside class="right-sidebar-container print:hidden astro-qh3jconl"><div class="right-sidebar astro-qh3jconl"><div class="lg:sl-hidden astro-mxqs2eqz"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-h45fw3mb"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-h45fw3mb"><details id="starlight__mobile-toc" class="astro-h45fw3mb"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-h45fw3mb"><span class="toggle sl-flex astro-h45fw3mb">On this page<svg aria-hidden="true" class="caret astro-h45fw3mb astro-i527dcnr" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-h45fw3mb"></span></summary><div class="dropdown astro-h45fw3mb"><ul class="isMobile astro-sq7qzx3x" style="--depth: 0;"><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#_top" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">Overview</span></a></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#the-stages-and-their-prompts" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">The stages and their prompts</span></a></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#layers-default-pack-global-project" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">Layers: default, pack, global, project</span></a></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#anatomy-of-a-prompt-file" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">Anatomy of a prompt file</span></a><ul class="isMobile astro-sq7qzx3x" style="--depth: 1;"><li style="--depth: 1;" class="astro-sq7qzx3x"><a href="#frontmatter" style="--depth: 1;" class="astro-sq7qzx3x"><span style="--depth: 1;" class="astro-sq7qzx3x">Frontmatter</span></a></li><li style="--depth: 1;" class="astro-sq7qzx3x"><a href="#section-markers" style="--depth: 1;" class="astro-sq7qzx3x"><span style="--depth: 1;" class="astro-sq7qzx3x">Section markers</span></a></li><li style="--depth: 1;" class="astro-sq7qzx3x"><a href="#template-language" style="--depth: 1;" class="astro-sq7qzx3x"><span style="--depth: 1;" class="astro-sq7qzx3x">Template language</span></a></li></ul></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#variables" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">Variables</span></a><ul class="isMobile astro-sq7qzx3x" style="--depth: 1;"><li style="--depth: 1;" class="astro-sq7qzx3x"><a href="#available-to-every-scenario-stage" style="--depth: 1;" class="astro-sq7qzx3x"><span style="--depth: 1;" class="astro-sq7qzx3x">Available to every scenario stage</span></a></li><li style="--depth: 1;" class="astro-sq7qzx3x"><a href="#extra-variables-per-stage" style="--depth: 1;" class="astro-sq7qzx3x"><span style="--depth: 1;" class="astro-sq7qzx3x">Extra variables per stage</span></a></li></ul></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#how-a-stage-runs" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">How a stage runs</span></a></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#iterating-safely" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">Iterating safely</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-mxqs2eqz"><div class="sl-container astro-mxqs2eqz"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-sq7qzx3x" style="--depth: 0;"><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#_top" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">Overview</span></a></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#the-stages-and-their-prompts" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">The stages and their prompts</span></a></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#layers-default-pack-global-project" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">Layers: default, pack, global, project</span></a></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#anatomy-of-a-prompt-file" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">Anatomy of a prompt file</span></a><ul class="astro-sq7qzx3x" style="--depth: 1;"><li style="--depth: 1;" class="astro-sq7qzx3x"><a href="#frontmatter" style="--depth: 1;" class="astro-sq7qzx3x"><span style="--depth: 1;" class="astro-sq7qzx3x">Frontmatter</span></a></li><li style="--depth: 1;" class="astro-sq7qzx3x"><a href="#section-markers" style="--depth: 1;" class="astro-sq7qzx3x"><span style="--depth: 1;" class="astro-sq7qzx3x">Section markers</span></a></li><li style="--depth: 1;" class="astro-sq7qzx3x"><a href="#template-language" style="--depth: 1;" class="astro-sq7qzx3x"><span style="--depth: 1;" class="astro-sq7qzx3x">Template language</span></a></li></ul></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#variables" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">Variables</span></a><ul class="astro-sq7qzx3x" style="--depth: 1;"><li style="--depth: 1;" class="astro-sq7qzx3x"><a href="#available-to-every-scenario-stage" style="--depth: 1;" class="astro-sq7qzx3x"><span style="--depth: 1;" class="astro-sq7qzx3x">Available to every scenario stage</span></a></li><li style="--depth: 1;" class="astro-sq7qzx3x"><a href="#extra-variables-per-stage" style="--depth: 1;" class="astro-sq7qzx3x"><span style="--depth: 1;" class="astro-sq7qzx3x">Extra variables per stage</span></a></li></ul></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#how-a-stage-runs" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">How a stage runs</span></a></li><li style="--depth: 0;" class="astro-sq7qzx3x"><a href="#iterating-safely" style="--depth: 0;" class="astro-sq7qzx3x"><span style="--depth: 0;" class="astro-sq7qzx3x">Iterating safely</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-qh3jconl"><main data-pagefind-body class="astro-qptjeslk" lang="en" dir="ltr"><div class="content-panel astro-opf25wg6"><div class="sl-container astro-opf25wg6"><h1 id="_top" class="astro-b6obuhhg">Prompts</h1></div></div><div class="content-panel astro-opf25wg6"><div class="sl-container astro-opf25wg6"><div class="sl-markdown-content"><p>Every generation stage is driven by a prompt file you can read and change. This guide explains where prompts live, how overrides are layered, what a prompt file contains, which variables each stage provides, and how to change a prompt without breaking generation.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="the-stages-and-their-prompts">The stages and their prompts</h2><a class="sl-anchor-link" href="#the-stages-and-their-prompts"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The stages and their prompts”</span></a></div>
-<p>A scenario is generated in stages. Each stage has one prompt file in <a href="https://github.com/actionstations-ai/actionstations/tree/main/prompts"><code dir="auto">prompts/</code></a> and asks the model for JSON that matches a fixed output schema.</p>
+<p>A scenario is generated in stages. Each stage has one prompt file in <a href="https://github.com/actionstations-ai/actionstations/tree/v0.8.1/prompts"><code dir="auto">prompts/</code></a> and asks the model for JSON that matches a fixed output schema.</p>
 <table>
 <thead>
 <tr>
@@ -85,85 +85,85 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/ideate.md"><code dir="auto">ideate.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/ideate.md"><code dir="auto">ideate.md</code></a></td>
 <td>Give me ideas</td>
 <td><code dir="auto">ideate</code></td>
 <td>Scenario concepts with hooks, systems, cited sections, suggested roles.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/scenario_overview.md"><code dir="auto">scenario_overview.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/scenario_overview.md"><code dir="auto">scenario_overview.md</code></a></td>
 <td>Overview</td>
 <td><code dir="auto">draft</code></td>
 <td>Title, theme, threat, operational impact, core plan sections tested.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/objectives_roles.md"><code dir="auto">objectives_roles.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/objectives_roles.md"><code dir="auto">objectives_roles.md</code></a></td>
 <td>Objectives &amp; roles</td>
 <td><code dir="auto">draft</code></td>
 <td>Exercise objectives and 4 to 5 player roles with standing orders.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/phase_plan.md"><code dir="auto">phase_plan.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/phase_plan.md"><code dir="auto">phase_plan.md</code></a></td>
 <td>Phase plan</td>
 <td><code dir="auto">draft</code></td>
 <td>Phases with titles, goals and time windows.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/msel_phase.md"><code dir="auto">msel_phase.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/msel_phase.md"><code dir="auto">msel_phase.md</code></a></td>
 <td>MSEL, once per phase</td>
 <td><code dir="auto">draft</code></td>
 <td>MSEL rows: time, inject id, from, to, event, expected action, purpose tag, format, citations.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/controller_handbook.md"><code dir="auto">controller_handbook.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/controller_handbook.md"><code dir="auto">controller_handbook.md</code></a></td>
 <td>Controller handbook</td>
 <td><code dir="auto">draft</code></td>
 <td>Room setup, rules of play, SimCell scripts.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/rubric.md"><code dir="auto">rubric.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/rubric.md"><code dir="auto">rubric.md</code></a></td>
 <td>Rubric</td>
 <td><code dir="auto">draft</code></td>
 <td>Grading metrics with Fail / Pass / Excellence behaviours tied to injects.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/eeg.md"><code dir="auto">eeg.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/eeg.md"><code dir="auto">eeg.md</code></a></td>
 <td>Evaluation guides</td>
 <td><code dir="auto">draft</code></td>
 <td>FEMA Core Capabilities per objective; one EEG per capability with critical tasks, each citing one plan section.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/player_briefing.md"><code dir="auto">player_briefing.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/player_briefing.md"><code dir="auto">player_briefing.md</code></a></td>
 <td>Player briefing</td>
 <td><code dir="auto">draft</code></td>
 <td>Situation brief, team assignments, rules of engagement.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/hotwash.md"><code dir="auto">hotwash.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/hotwash.md"><code dir="auto">hotwash.md</code></a></td>
 <td>Hot wash</td>
 <td><code dir="auto">draft</code></td>
 <td>“3-Up, 3-Down” and scenario-specific discussion questions.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/sitman.md"><code dir="auto">sitman.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/sitman.md"><code dir="auto">sitman.md</code></a></td>
 <td>SitMan modules</td>
 <td><code dir="auto">draft</code></td>
 <td>Situation Manual modules (narrative, key issues, discussion questions) and the assumptions and artificialities. The exercise details are never among its variables.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/critique.md"><code dir="auto">critique.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/critique.md"><code dir="auto">critique.md</code></a></td>
 <td>Critique</td>
 <td><code dir="auto">critique</code></td>
 <td>Issues found in the draft; MSEL phases are then revised from them.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/inject_text.md"><code dir="auto">inject_text.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/inject_text.md"><code dir="auto">inject_text.md</code></a></td>
 <td>Inject text</td>
 <td><code dir="auto">draft</code></td>
 <td>The full inject for one MSEL row, filling its template’s fields.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/inject_media_brief.md"><code dir="auto">inject_media_brief.md</code></a></td>
+<td><a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/inject_media_brief.md"><code dir="auto">inject_media_brief.md</code></a></td>
 <td>Media brief</td>
 <td><code dir="auto">draft</code></td>
 <td>Image, video or voice brief for one inject.</td>
@@ -227,7 +227,7 @@
 </div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">You are a senior exercise facilitator writing the Hot Wash (debrief) guide ...</span></div></div><div class="ec-line"><div class="code">
 </div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">&lt;!-- @context --&gt;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">{{doctrine}}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">&lt;!-- @user --&gt;</span></div></div><div class="ec-line"><div class="code">
 </div></div><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">scenario_state</span><span style="--0:#7FDBCA">&gt;</span></span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">Scenario: {{scenario.title}}{{#if scenario.subtitle}} — {{scenario.subtitle}}{{/if}}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">Theme: {{scenario.overview.theme}}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">...</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="---name: hotwashstage: hotwashversion: 1description: Hot wash guide - 3-Up/3-Down plus scenario-specific discussion questions tied to the objectives.outputSchema: HotwashOutputtask: draftmodelHints:  temperature: 0.6  maxTokens: 2000retrieval:  queries:    - &#x27;after action review lessons learned&#x27;    - &#x27;{{scenario.overview.threat}}&#x27;  k: 4variables: [project, scenario, roles, doctrine, retrieved, instructions]---<!-- @system -->You are a senior exercise facilitator writing the Hot Wash (debrief) guide ...<!-- @context -->{{doctrine}}<!-- @user --><scenario_state>Scenario: {{scenario.title}}{{#if scenario.subtitle}} — {{scenario.subtitle}}{{/if}}Theme: {{scenario.overview.theme}}..."><div></div></button></div></figure></div>
-<p>This is an excerpt of the shipped <a href="https://github.com/actionstations-ai/actionstations/blob/main/prompts/hotwash.md"><code dir="auto">prompts/hotwash.md</code></a>. Text before the first marker is a note for people and is never sent.</p>
+<p>This is an excerpt of the shipped <a href="https://github.com/actionstations-ai/actionstations/blob/v0.8.1/prompts/hotwash.md"><code dir="auto">prompts/hotwash.md</code></a>. Text before the first marker is a note for people and is never sent.</p>
 <div class="sl-heading-wrapper level-h3"><h3 id="frontmatter">Frontmatter</h3><a class="sl-anchor-link" href="#frontmatter"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Frontmatter”</span></a></div>
 <table>
 <thead>
